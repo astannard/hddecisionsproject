@@ -1,0 +1,24 @@
+﻿@model List<CardenceLogic.Models.DailyUsage>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div>
+    <h1> <strong>Cardence</strong> usage</h1>
+    <p>
+      Please find the usage stats blow:
+    </p>
+
+
+    @foreach (var day in Model)
+    {
+       
+        @string.Format(" {0} : {1}", @day.Day.ToString("ddd dd MMM yy"), @day.Useage)
+    
+        <br />
+    }
+
+
+
+
+</div>

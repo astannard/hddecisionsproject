@@ -1,0 +1,16 @@
+﻿@model CardEnquiryResultViewModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div>
+    <h1>Hello and welcome to <strong>Cardence</strong></h1>
+   <div>
+        <p>Thanks for taking the time fill out the form, we have reviewed your details and have found the following card best suited to you:</p>
+        <h3>@Model.CardDisplay</h3>
+        <h4>Offering a very reasonable @Model.CardAPR</h4>
+        <p>@Model.CardPromo</p>
+    </div>
+
+
+</div>

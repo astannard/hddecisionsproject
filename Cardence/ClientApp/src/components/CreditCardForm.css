@@ -1,0 +1,17 @@
+﻿fieldset label{
+    margin-right:2em;
+    min-width:12em;
+}
+
+.creditcardform{
+    margin:20px;
+}
+
+.creditcardform button{
+    flood-color:#79C;
+    background-color:#79C;
+    border:none;
+    padding:1em 2em;
+    font-weight:bolder;
+    margin-top:2em;
+}
