@@ -16,8 +16,8 @@ namespace Cardence.Controllers
     {
         private readonly DataContext _ctx;
         private readonly ILogger<CardEnquiryController> _logger;
-        private readonly CardDataService _dataSrvc;
-        public CardEnquiryController(ILogger<CardEnquiryController> logger, DataContext ctx, CardDataService dataService)
+        private readonly ICardDataService _dataSrvc;
+        public CardEnquiryController(ILogger<CardEnquiryController> logger, DataContext ctx, ICardDataService dataService)
         {
             _logger = logger;
             _ctx = ctx;

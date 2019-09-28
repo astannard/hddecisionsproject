@@ -8,9 +8,9 @@ namespace CardenceMVC.Controllers
     public class StatsController : Controller
     {
         private readonly ILogger<StatsController> _logger;
-        private readonly CardDataService _cardDataService;
+        private readonly ICardDataService _cardDataService;
 
-        public StatsController(ILogger<StatsController> logger, CardDataService cardDataService)
+        public StatsController(ILogger<StatsController> logger, ICardDataService cardDataService)
         {
             _logger = logger;
             _cardDataService = cardDataService;

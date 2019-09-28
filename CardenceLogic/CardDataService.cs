@@ -8,7 +8,7 @@ using CardenceLogic.Models;
 
 namespace CardenceLogic
 {
-    public class CardDataService
+    public class CardDataService : ICardDataService
     {
         private  DataContext _ctx;
         private readonly ILogger<CardDataService> _logger;
@@ -54,39 +54,35 @@ namespace CardenceLogic
                     LastName = lastname
                 });
                 _ctx.SaveChanges();
-                //_ctx.Dispose();
             }
             catch(Exception e)
             {
                 _logger.LogError($"Error saving data occured due to {e.Message}");
             }
             
-
-
-            return GetCardDetails(cardType.ToString());
+            return GetCardDetails(cardType);
 
         }
 
-        private CardDetails GetCardDetails(string card)
+        private CardDetails GetCardDetails(CardType card)
         {
-            var cardDetails = new CardDetails { Card = card };
+            var cardDetails = new CardDetails { Card = card.ToString() };
 
-            switch (card.ToLower())
+            switch (card)
             {
-                case "none":
+                case CardType.None:
                     cardDetails.CardDisplay = "no credit cards are available";
                     break;
-                case "vanquis":
+                case CardType.Vanquis:
                     cardDetails.CardDisplay = "Vanquis";
                     cardDetails.CardPromo = "easy to get accepted and a reasonable APR";
                     cardDetails.CardAPR = "17.9% APR";
                     break;
-                case "barclaycard":
+                case CardType.Barclaycard:
                     cardDetails.CardDisplay = "Barclaycard";
                     cardDetails.CardPromo = "a card for the more distinguished applicant offering industry leading rates";
                     cardDetails.CardAPR = "12.9% APR";
                     break;
-
             }
 
             return cardDetails;

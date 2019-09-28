@@ -13,9 +13,9 @@ namespace CardenceMVC.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly CardDataService _cardDataService;
+        private readonly ICardDataService _cardDataService;
 
-        public HomeController(ILogger<HomeController> logger, CardDataService cardDataService)
+        public HomeController(ILogger<HomeController> logger, ICardDataService cardDataService)
         {
             _logger = logger;
             _cardDataService = cardDataService;

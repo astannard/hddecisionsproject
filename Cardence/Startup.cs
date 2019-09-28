@@ -26,7 +26,7 @@ namespace Cardence
         {
 
             services.AddControllersWithViews();
-            services.AddScoped<CardDataService, CardDataService>();
+            services.AddScoped<ICardDataService, CardDataService>();
             services.AddScoped<DataContext, DataContext>();
 
             // In production, the React files will be served from this directory
